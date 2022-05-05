@@ -1,5 +1,7 @@
-#Walkability Model 
-\*
+# Walkability Model 
+
+
+
 The model was created with the QGIS model builder tool. The model inputs consist of mandatory spatial data and optional weight-values for the data-derived variables of the model.  The area of interest –polygon is used to cut the other input data into more manageable size. This done so that the user doesn’t need to filter the data themselves. The grid/index unit data is used as the basic unit in which to the walkability score is calculated. Each of the other spatial data are joined to the index units based on location. The way how they are joined is based on the input data type: Point data is joined by “points in polygon” -method, line and polygon data is first intersected and then joined, and raster data is either polygonised and then joined, or summarized for each unit to calculate distinct land use classes.  
 
  
