@@ -76,3 +76,6 @@ Multiple different variables are then derived from the data for each grid cell /
 - *Sum of all individual classes. Respects the optional weight inputs.* 
 - *Yields a layer which should be used with base map. Layer symbology should then be configured using graduated classes for a proper visualisation.* 
 
+ 
+ 
+ ![Flowchart of the model](vk.png)
