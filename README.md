@@ -8,6 +8,8 @@ The model was created with the QGIS model builder tool. The model inputs consist
 
 Multiple different variables are then derived from the data for each grid cell / unit: amenity density, heavy traffic area share, street network coverage (total length), intersection density, total floor area of residential buildings, average speed limit, distinct land use types, and park area share. These values are then rescaled to allow comparison. Some of variables are also divided by the unit area, this allows the use of an index unit data that is not uniform in area eg. Postal areas. Optional weights are then used to scale the final values of each input type. This allows weighting wanted characteristics like green areas or amenities and e.g., to increase the negative effects of heavy traffic or to disregard a variable all together. As a result, a walkability index layer is created. Its spatial coverage is determined by the features of the index unit layer (Preferably a uniform grid layer) that fall within the area if interest, thus it is recommended that all the other input datasets exceed the spatial coverage of the area of interest polygon. The index layer contains each of the variables that are summed up with weights as the walkability score, as well as a normalized walkability score that is rescaled between 0 and 10 based on the minimum and maximum values of the calculated walkability score.
 
+
+ ![Flowchart of the model](vk.png)
 *[mandatory]* 
 \*
 
@@ -78,4 +80,4 @@ Multiple different variables are then derived from the data for each grid cell /
 
  
  
- ![Flowchart of the model](vk.png)
+
