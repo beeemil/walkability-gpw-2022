@@ -1,6 +1,10 @@
-﻿README: 
+#Walkability Model 
 \*
+The model was created with the QGIS model builder tool. The model inputs consist of mandatory spatial data and optional weight-values for the data-derived variables of the model.  The area of interest –polygon is used to cut the other input data into more manageable size. This done so that the user doesn’t need to filter the data themselves. The grid/index unit data is used as the basic unit in which to the walkability score is calculated. Each of the other spatial data are joined to the index units based on location. The way how they are joined is based on the input data type: Point data is joined by “points in polygon” -method, line and polygon data is first intersected and then joined, and raster data is either polygonised and then joined, or summarized for each unit to calculate distinct land use classes.  
 
+ 
+
+Multiple different variables are then derived from the data for each grid cell / unit: amenity density, heavy traffic area share, street network coverage (total length), intersection density, total floor area of residential buildings, average speed limit, distinct land use types, and park area share. These values are then rescaled to allow comparison. Some of variables are also divided by the unit area, this allows the use of an index unit data that is not uniform in area eg. Postal areas. Optional weights are then used to scale the final values of each input type. This allows weighting wanted characteristics like green areas or amenities and e.g., to increase the negative effects of heavy traffic or to disregard a variable all together. As a result, a walkability index layer is created. Its spatial coverage is determined by the features of the index unit layer (Preferably a uniform grid layer) that fall within the area if interest, thus it is recommended that all the other input datasets exceed the spatial coverage of the area of interest polygon. The index layer contains each of the variables that are summed up with weights as the walkability score, as well as a normalized walkability score that is rescaled between 0 and 10 based on the minimum and maximum values of the calculated walkability score.
 
 *[mandatory]* 
 \*
